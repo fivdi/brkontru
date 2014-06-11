@@ -8,6 +8,8 @@ Easy access to the BeagleBone Black expansion headers.
 
 ## Usage
 
+Debounced buttons
+
 ```js
 var bot = require('brkontru'),
   buttons = [new bot.Button(bot.pins.p9_23), new bot.Button(bot.pins.p9_24)];
@@ -24,4 +26,7 @@ buttons.forEach(function (button) {
   });
 });
 ```
+
+Tested with Debian Image 2014-05-14 and Node.js v0.10.25 on a BeagleBone Black
+rev. A5C.
 

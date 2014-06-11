@@ -3,9 +3,12 @@
   "description": "Easy access to the BeagleBone Black expansion headers",
   "version": "0.0.1",
   "author": "fivdi",
+  "keywords": [
+    "beaglebone",
+    "gpio"
+  ],
   "repository": "fivdi/brkontru",
   "license": "MIT",
-  "main": "index.js",
   "dependencies": {
     "lodash": "~2.4.1",
     "glob": "~4.0.2"
