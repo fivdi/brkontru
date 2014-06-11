@@ -1,0 +1,20 @@
+{
+  "name": "brkontru",
+  "description": "Easy access to the BeagleBone Black expansion headers",
+  "version": "0.0.1",
+  "author": "fivdi",
+  "repository": "fivdi/brkontru",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "glob": "~4.0.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+

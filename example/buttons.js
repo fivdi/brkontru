@@ -1,15 +1,4 @@
-## brkontru - Break on Through (to the Other Side!)
-
-Easy access to the BeagleBone Black expansion headers.
-
-## Installation
-
-    $ npm install brkontru
-
-## Usage
-
-```js
-var bot = require('brkontru'),
+var bot = require('../'),
   buttons = [new bot.Button(bot.pins.p9_23), new bot.Button(bot.pins.p9_24)];
 
 buttons.forEach(function (button) {
@@ -23,5 +12,4 @@ buttons.forEach(function (button) {
     console.log('released: ' + button.name);
   });
 });
-```
 
