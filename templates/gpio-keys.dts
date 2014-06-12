@@ -34,8 +34,8 @@
                 {{ name }}_gpio {
                     label = "{{ label }}";
                     debounce_interval = <{{ debounceInterval }}>;
-                    linux,code = <{{ code }}>;
-                    gpios = <&gpio{{ gpioBank }} {{ gpioOffset }} 0x1>;
+                    linux,code = <1>;
+                    gpios = <&gpio{{ gpioBank }} {{ gpioOffset }} {{ isActiveLow }}>;
                     gpio-key,wakeup;
                 };
             };
