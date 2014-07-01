@@ -4,6 +4,6 @@ var bot = require('../'),
   ledBrightness = 0;
 
 button.on('pressed', function () {
-  led.brightness(ledBrightness ^= 255)
+  led.brightness(ledBrightness ^= 255);
 });
 

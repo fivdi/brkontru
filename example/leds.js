@@ -24,4 +24,3 @@ setInterval(function () {
   }, 250);
 }, 1000);
 
-
