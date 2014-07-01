@@ -18,9 +18,9 @@ leds[1].on('ready', function () {
 });
 
 setInterval(function () {
-  leds[0].turnOn();
+  leds[0].brightness(255);
   setTimeout(function () {
-    leds[0].turnOff();
+    leds[0].brightness(0);
   }, 250);
 }, 1000);
 
