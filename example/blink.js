@@ -7,6 +7,6 @@ led1.on('ready', function (err) {
 });
 
 led2.on('ready', function (err) {
-  led2.blink(19, 1);
+  led2.blink(1, 19);
 });
 
