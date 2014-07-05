@@ -1,17 +1,19 @@
 {
   "name": "brkontru",
   "description": "Easy access to the BeagleBone Black expansion headers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "fivdi",
   "keywords": [
     "beaglebone",
-    "gpio"
+    "gpio",
+    "button",
+    "led"
   ],
   "repository": "fivdi/brkontru",
   "license": "MIT",
   "dependencies": {
     "lodash": "~2.4.1",
-    "glob": "~4.0.2"
+    "glob": "~4.0.3"
   },
   "engines": {
     "node": ">=0.10.0"

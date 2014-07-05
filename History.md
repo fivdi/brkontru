@@ -1,5 +1,5 @@
-Unreleased
-==========
+0.1.0 / 2014-07-05
+==================
 
   * debounceInterval, pullType, and isActiveLow options for buttons
   * exclusive-use for buttons
