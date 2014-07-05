@@ -1,6 +1,8 @@
 Unreleased
 ==========
 
+  * support for onboard leds
+
 0.1.1 / 2014-07-05
 ==================
 
