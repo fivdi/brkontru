@@ -2,6 +2,7 @@ Unreleased
 ==========
 
   * support for onboard leds
+  * initial sysfs gpio support
 
 0.1.1 / 2014-07-05
 ==================
@@ -13,7 +14,7 @@ Unreleased
 
   * debounceInterval, pullType, and isActiveLow options for buttons
   * exclusive-use for buttons
-  * LED support
+  * led support
 
 0.0.1 / 2014-06-11
 ==================
