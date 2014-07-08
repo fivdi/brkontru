@@ -1,5 +1,5 @@
-Unreleased
-==========
+0.2.0 / 2014-07-08
+==================
 
   * support for onboard leds
   * initial sysfs gpio support
