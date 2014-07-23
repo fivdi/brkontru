@@ -1,26 +1,17 @@
 var bot = require('../'),
-  leds = [
-    new bot.Led(bot.pins.p9_26),
-    new bot.Led(bot.pins.p9_27)
-  ];
+  led1 = new bot.Led(bot.pins.p9_26),
+  led2 = new bot.Led(bot.pins.p9_27);
 
-leds.forEach(function (led) {
-  led.on('error', function (err) {
-    console.log('error: ' + led.name + err);
-  });
-  led.on('ready', function (err) {
-    console.log('ready: ' + led.name);
-  });
+led1.on('ready', function () {
+  led1.heartbeat();
 });
 
-leds[1].on('ready', function () {
-  leds[1].heartbeat();
+led2.on('ready', function () {
+  setInterval(function () {
+    led2.value(1);
+    setTimeout(function () {
+      led2.value(0);
+    }, 250);
+  }, 1000);
 });
-
-setInterval(function () {
-  leds[0].value(1);
-  setTimeout(function () {
-    leds[0].value(0);
-  }, 250);
-}, 1000);
 
