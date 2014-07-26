@@ -7,7 +7,7 @@ var bot = require('../'),
   ];
 
 leds.forEach(function (led) {
-  led.on('ready', function () {
+  led.once('ready', function () {
     led.blink(10, 1990);
   });
 });
