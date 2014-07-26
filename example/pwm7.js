@@ -11,11 +11,18 @@ var bot = require('../'),
 
 pwms.forEach(function (pwm) {
   pwm.once('ready', function () {
-    console.log(pwm.name + ' ready');
+    var period = pwm.period();
+    var inc = period / 1000;
+    var timeout = function() {
+      var duty = pwm.duty() + inc;
+      if (duty <= period) {
+        pwm.duty(duty);
+        setTimeout(timeout, 1);  
+      }
+    }
+
     pwm.duty(0);
-    setTimeout(function () {
-      pwm.duty(450000);
-    }, 1000);
+    setTimeout(timeout, 1);  
   });
 });
 
