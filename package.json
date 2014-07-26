@@ -1,7 +1,7 @@
 {
   "name": "brkontru",
-  "description": "Easy access to the BeagleBone Black expansion headers",
-  "version": "0.2.0",
+  "description": "Break on Through Easy access to the BeagleBone Black expansion headers",
+  "version": "0.3.0",
   "author": "fivdi",
   "keywords": [
     "beaglebone",

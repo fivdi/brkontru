@@ -1,6 +1,6 @@
 ## brkontru - Break on Through (to the Other Side!)
 
-Easy access to the BeagleBone Black expansion headers.
+Easy access to the BeagleBone Black GPIO expansion headers.
 
 Work in progress!
 
