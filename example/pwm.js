@@ -1,10 +1,18 @@
 var bot = require('../'),
-  pwm = new bot.Pwm(bot.pins.p9_42);
+  led = new bot.Pwm(bot.pins.p9_42);
 
-pwm.once('ready', function () {
-  pwm.duty(0);
-  setTimeout(function () {
-    pwm.duty(450000);
-  }, 1000);
+led.once('ready', function () {
+  var period = led.period();
+  var duty = period;
+  var detla = period / 1000;
+
+  (function updateDuty() {
+    led.duty(duty);
+
+    duty -= detla;
+    if (duty >= 0) {
+      setTimeout(updateDuty, 1);  
+    }
+  })();
 });
 
