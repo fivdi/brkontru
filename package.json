@@ -5,6 +5,8 @@
   "author": "fivdi",
   "keywords": [
     "beaglebone",
+    "adc",
+    "analog",
     "gpio",
     "pwm",
     "button",
