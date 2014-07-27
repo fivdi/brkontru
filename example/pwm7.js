@@ -15,16 +15,14 @@ pwms.forEach(function (pwm) {
     var duty = 0;
     var inc = period / 1000;
 
-    var timeout = function() {
+    (function updateDuty() {
+      pwm.duty(duty);
+
       duty += inc;
       if (duty <= period) {
-        pwm.duty(duty);
-        setTimeout(timeout, 1);  
+        setTimeout(updateDuty, 1);  
       }
-    }
-
-    pwm.duty(duty);
-    setTimeout(timeout, 1);  
+    })();
   });
 });
 

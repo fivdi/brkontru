@@ -6,8 +6,8 @@ var bot = require('../'),
     new bot.Led('beaglebone:green:usr3')
   ];
 
-leds.forEach(function (led) {
-  led.once('ready', function () {
+bot.once('ready', leds, function () {
+  leds.forEach(function (led) {
     led.blink(10, 1990);
   });
 });
