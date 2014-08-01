@@ -62,7 +62,7 @@ bot.once('ready', leds, function () {
     blinkLeds(1, 9);
     setTimeout(function () {
       // Blink at 100Hz. Cycle = 10ms, on for 9ms, off for 1ms.
-      blinkLeds(10, 0);
+      blinkLeds(9, 1);
     }, 250);
   }, 500);
 });
