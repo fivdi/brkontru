@@ -86,3 +86,33 @@ button.on('pressed', function () {
 });
 ```
 
+### PWM
+
+To fade an LED on and off once per second, try the following circuit and program.
+
+<img src="https://github.com/fivdi/brkontru/raw/master/example/pwm.png">
+
+```js
+var bot = require('brkontru'),
+  led = new bot.Pwm(bot.pins.p9_42);
+
+led.once('ready', function () {
+  var period = led.period();
+  var duty = 0;
+  var delta = period / 50;
+
+  (function updateDuty() {
+    led.duty(duty);
+
+    duty += delta;
+
+    if (duty < 0 || duty > period) {
+      delta = -delta;
+      duty += delta;
+    }
+
+    setTimeout(updateDuty, 10);
+  })();
+});
+```
+
