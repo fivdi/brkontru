@@ -21,23 +21,11 @@ rev. A5C.
 
 ## Usage
 
+# LEDs
+
 Let's start off with something simple that doesn't require any hadrware other
-than the BeagleBone Black itself.
-
-```js
-var bot = require('brkontru'),
-  usr0 = new bot.Led(bot.Led.USR0);
-
-usr0.once('ready', function () {
-  // Blink at 1Hz. Cycle = 1000ms, on for 500ms, off for 500ms.
-  usr0.blink();
-});
-```
-
-This will blink onboard user LED0 at a frequency of 1Hz. The Led#blink method
-has two arguments; delayOn and delayOff, both in milliseconds. If unspecified,
-they default to 500ms. The next example also blinks the LED at a frequency of
-1Hz, but this time the on and off delays are explicitly specified.
+than the BeagleBone Black itself. The following program will blink user LED0
+at a frequency of 1HZ.
 
 ```js
 var bot = require('brkontru'),
@@ -49,35 +37,9 @@ usr0.once('ready', function () {
 });
 ```
 
-It's also possible to blink the LED faster, say at 100Hz. The following
-example will do just that. The blinking will no longer be visible as it's too
-fast for the eye to detect and the LED will light dimly as it's only on 10% of
-the time.
-
-```js
-var bot = require('brkontru'),
-  usr0 = new bot.Led(bot.Led.USR0);
-
-usr0.once('ready', function () {
-  // Blink at 100Hz. Cycle = 10ms, on for 1ms, off for 9ms.
-  usr0.blink(1, 9);
-});
-```
-
-To have the LED glow at almost full brightness:
-
-```js
-var bot = require('brkontru'),
-  usr0 = new bot.Led(bot.Led.USR0);
-
-usr0.once('ready', function () {
-  // Blink at 100Hz. Cycle = 10ms, on for 9ms, off for 1ms.
-  usr0.blink(9, 1);
-});
-```
-
-The next example blinks all four onboard user LEDs at 100Hz. Every 250ms, the
-LEDs change from glowing dimly to glowing brightly.
+The next example blinks all four onboard user LEDs at 100Hz. Every 250ms the
+on/off blink delays are adjusted. The LEDs will apternate between glowing dimly
+and the brightly.
 
 ```js
 var bot = require('brkontru'),
@@ -96,8 +58,10 @@ bot.once('ready', leds, function () {
   };
 
   setInterval(function () {
+    // Blink at 100Hz. Cycle = 10ms, on for 1ms, off for 9ms.
     blinkLeds(1, 9);
     setTimeout(function () {
+      // Blink at 100Hz. Cycle = 10ms, on for 9ms, off for 1ms.
       blinkLeds(10, 0);
     }, 250);
   }, 500);

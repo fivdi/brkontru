@@ -2,8 +2,8 @@ var bot = require('../'),
   Led = bot.Led,
   leds;
 
-leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function(usrledName) {
-  return new Led(usrledName);
+leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function(usrLedName) {
+  return new Led(usrLedName);
 });
 
 bot.once('ready', leds, function () {

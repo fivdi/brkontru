@@ -3,22 +3,22 @@ var bot = require('../'),
 
 function test() {
   var time = process.hrtime(),
+    state = 0,
     opsPerSec,
-    i;
+    ops;
 
-  for (i = 0; i !== 50000; i += 1) {
-    out.value(1);
-    out.value(0);
+  for (ops = 0; ops !== 100000; ops += 1) {
+    out.value(state ^= 1);
   }
 
   time = process.hrtime(time);
-  opsPerSec = Math.floor(i * 2 / (time[0] + time[1] / 1E9));
+  opsPerSec = Math.floor(ops / (time[0] + time[1] / 1E9));
 
   console.log('ok - ' + __filename);
   console.log('     ' + opsPerSec + ' output ops per second');
 }
 
-out.on('ready', function() {
+out.once('ready', function() {
   test();
 });
 
