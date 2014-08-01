@@ -24,22 +24,22 @@ rev. A5C.
 ### LEDs
 
 Let's start off with something simple that doesn't require any hadrware other
-than the BeagleBone Black itself. The following program will blink user LED0
-at a frequency of 1HZ.
+than the BeagleBone Black itself. The following example will blink onboard user
+LED0 at a frequency of 1Hz.
 
 ```js
 var bot = require('brkontru'),
   usr0 = new bot.Led(bot.Led.USR0);
 
 usr0.once('ready', function () {
-  // Blink at 1Hz. Cycle = 1000ms, on for 100ms, off for 900ms.
-  usr0.blink(100, 900);
+  // Blink at 1Hz. Cycle = 1000ms, on for 500ms, off for 500ms.
+  usr0.blink();
 });
 ```
 
 The next example blinks all four onboard user LEDs at 100Hz. Every 250ms the
-on/off blink delays are adjusted. The LEDs will apternate between glowing dimly
-and the brightly.
+blink delays are adjusted. The LEDs will alternate between glowing dimly and
+then brightly.
 
 ```js
 var bot = require('brkontru'),
