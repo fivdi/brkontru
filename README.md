@@ -85,7 +85,7 @@ button.on('pressed', function () {
 });
 ```
 
-### PWM
+### PWM - Pulse Width Modulation
 
 Fade an LED on and off once per second.
 
