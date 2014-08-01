@@ -70,8 +70,7 @@ bot.once('ready', leds, function () {
 
 ### Buttons
 
-To toggle the state of an LED every time a button is pressed, try the following
-circuit and program.
+Toggle the state of an LED every time a button is pressed.
 
 <img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
 
@@ -88,7 +87,7 @@ button.on('pressed', function () {
 
 ### PWM
 
-To fade an LED on and off once per second, try the following circuit and program.
+Fade an LED on and off once per second.
 
 <img src="https://github.com/fivdi/brkontru/raw/master/example/pwm.png">
 
