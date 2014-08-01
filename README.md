@@ -21,7 +21,7 @@ rev. A5C.
 
 ## Usage
 
-# LEDs
+### LEDs
 
 Let's start off with something simple that doesn't require any hadrware other
 than the BeagleBone Black itself. The following program will blink user LED0
