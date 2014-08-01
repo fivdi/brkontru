@@ -39,7 +39,7 @@ usr0.once('ready', function () {
 
 The next example blinks all four onboard user LEDs at 100Hz. Every 250ms the
 blink delays are adjusted. The LEDs will alternate between glowing dimly and
-then brightly.
+brightly.
 
 ```js
 var bot = require('brkontru'),
@@ -67,5 +67,7 @@ bot.once('ready', leds, function () {
   }, 500);
 });
 ```
+
+### Buttons
 
 

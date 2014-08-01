@@ -2,8 +2,8 @@ var bot = require('../'),
   Led = bot.Led,
   leds;
 
-leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function(usrLedName) {
-  return new Led(usrLedName);
+leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function(usrledName) {
+  return new Led(usrledName);
 });
 
 bot.once('ready', leds, function () {
@@ -14,9 +14,11 @@ bot.once('ready', leds, function () {
   };
 
   setInterval(function () {
+    // Blink at 100Hz. Cycle = 10ms, on for 1ms, off for 9ms.
     blinkLeds(1, 9);
     setTimeout(function () {
-      blinkLeds(10, 0);
+      // Blink at 100Hz. Cycle = 10ms, on for 9ms, off for 1ms.
+      blinkLeds(9, 1);
     }, 250);
   }, 500);
 });
