@@ -115,3 +115,21 @@ led.once('ready', function () {
 });
 ```
 
+### ADC - Analog to Digital Conversion
+
+Determine the ambient light level with an analog ambient light sensor.
+
+<img src="https://github.com/fivdi/brkontru/raw/master/example/adc.png">
+
+```js
+var bot = require('brkontru'),
+  ain = new bot.Ain(bot.pins.p9_36);
+
+ain.once('ready', function () {
+  setInterval(function () {
+    console.log(ain.value());
+  }, 1000);
+});
+
+```
+
