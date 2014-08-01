@@ -70,4 +70,19 @@ bot.once('ready', leds, function () {
 
 ### Buttons
 
+To toggle the state of an LED every time a button is pressed, try the following
+circuit and program.
+
+<img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
+
+```js
+var bot = require('../'),
+  button = new bot.Button(bot.pins.p9_24),
+  led = new bot.Led(bot.pins.p9_26),
+  ledState = 0;
+
+button.on('pressed', function () {
+  led.value(ledState ^= 1);
+});
+```
 
