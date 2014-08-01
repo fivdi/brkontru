@@ -76,7 +76,7 @@ circuit and program.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   button = new bot.Button(bot.pins.p9_24),
   led = new bot.Led(bot.pins.p9_26),
   ledState = 0;
