@@ -1,3 +1,10 @@
+0.5.0 / 2014-08-01
+==================
+
+  * documentation
+  * default pwm polarity is now low
+  * updated dependencies
+
 0.4.0 / 2014-07-27
 ==================
 
