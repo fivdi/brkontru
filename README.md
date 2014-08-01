@@ -4,11 +4,11 @@ Easy access to the BeagleBone Black GPIO expansion headers.
 
 Currently supports the following features:
 
+ * LEDs - Light Emitting Diodes
+ * Buttons and Switches
  * GPIO - General Purpose Input Output
  * PWM - Pulse Width Modulation
  * ADC - Analog to Digital Conversion
- * LEDs - Light Emitting Diodes
- * Buttons and Switches
 
 Work in progress!
 
