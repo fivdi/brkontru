@@ -1,6 +1,12 @@
 ## Class Button - Buttons and Switches
 
 The following circuit shows how to wire a button to pin 24 on the P9 header.
+When the button is pressed, P9_24 will be pulled low. When it's released,
+P9_24 will be pulled high as the internal pull-up resistor for 
+P9_24 will be enabled. Although the 1kΩ resistor isn't strictly necessary,
+it will protect the BeagleBone if P9_24 is ever configured as an output,
+set high, and someone presses the button. Without the 1kΩ resistor this
+would result in a short circut.
 
 <img src="https://github.com/fivdi/brkontru/raw/master/doc/button.png">
 
