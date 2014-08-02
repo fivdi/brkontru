@@ -9,7 +9,7 @@ constants for specifying the pull type in such cases.
 var bot = require('brkontru'),
   button = new bot.Gpio(bot.pins.p9_23, {
     direction: bot.Gpio.IN,
-    pullType: pullTypes.PULL_UP
+    pullType: bot.pullTypes.PULL_UP
   });
 ```
 
