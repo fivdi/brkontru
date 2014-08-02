@@ -1,6 +1,25 @@
 ## Class Led - Light Emitting Diode
 
+The following circuit shows how to wire an LED to pin 26 on the P9 header.
+
 <img src="https://github.com/fivdi/brkontru/raw/master/doc/led.png">
+
+The program below can be used with this circuit to heartbeat the LED.
+
+```js
+var bot = require('brkontru'),
+  led = new bot.Led(bot.pins.p9_26);
+
+led.on('ready', function () {
+  led.heartbeat();
+});
+```
+
+Note that the LED will continue to heartbeat after the program has terminated.
+This isn't as magical as it might first seam. Under the covers, the Led class
+controls LEDs by asking the Linux leds-gpio device driver to perform all the
+work. In this case the device driver will continue to heartbeat the LED as it
+wasn't told to stop doing so.
 
 ### Constructor: Led(pin, options)
 - pin - a pin object or one of Led.USR0, Led.USR1, Led.USR2, or Led.USR3

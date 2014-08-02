@@ -38,12 +38,13 @@ button.on('released', function () {
 - pin - a pin object
 - options - object (optional)
 
-Creates a Button object which will fire events when the corresponding button is
-pressed or released. A Button object is an EventEmitter.
+Creates a Button object, an EventEmitter, which will fire events when the
+button is pressed or released. The options object can be used to configure
+the debounce interval, pull type, and active state for the button.
 
 The following options are supported:
 - debounceInterval: number (optional, default 50)
-- pullType: number (optional, pullTypes.PULL_UP)
+- pullType: number (optional, default pullTypes.PULL_UP)
 - isActiveLow - boolean (optional, default true)
 
 ### Event: 'ready'
