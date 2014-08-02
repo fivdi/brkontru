@@ -2,14 +2,6 @@
 
 Easy access to the BeagleBone Black GPIO expansion headers.
 
-Currently supports the following features:
-
- * LEDs - Light Emitting Diodes
- * Buttons and Switches
- * GPIO - General Purpose Input Output
- * PWM - Pulse Width Modulation
- * ADC - Analog to Digital Conversion
-
 Work in progress!
 
 ## Installation
@@ -18,6 +10,14 @@ Work in progress!
 
 Tested with Debian Image 2014-05-14 and Node.js v0.10.25 on a BeagleBone Black
 rev. A5C.
+
+## Features
+
+ * LEDs - Light Emitting Diodes
+ * Buttons and Switches
+ * GPIO - General Purpose Input Output
+ * PWM - Pulse Width Modulation
+ * ADC - Analog to Digital Conversion
 
 ## Usage
 
