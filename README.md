@@ -136,7 +136,7 @@ ain.once('ready', function () {
 ## Documentation
 
 - pins
-- pullTypes
+- [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md)
 - Ain
 - Button
 - Gpio

@@ -1,4 +1,4 @@
-## LED - Light Emitting Diode
+## Class Led - Light Emitting Diode
 
 ### Constructor: Led(pin, options)
 - pin - a pin object or one of Led.USR0, Led.USR1, Led.USR2, or Led.USR3
@@ -8,7 +8,7 @@ Creates an Led object for controlling an LED. The LED can be either one of the
 four onboard user LEDs or an LED connected up to an appropriate header pin.
 
 The following options are supported:
-- isActiveLow - boolean (optional, default false).
+- isActiveLow - boolean (optional, default false)
 
 ### Method: value(val)
 - val - number
