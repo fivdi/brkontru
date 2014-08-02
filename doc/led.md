@@ -8,7 +8,7 @@ Creates an Led object for controlling an LED. The LED can be either one of the
 four onboard user LEDs or an LED connected up to an appropriate header pin.
 
 The following options are supported:
-- isActiveLow - boolean (optional, default false)
+- isActiveLow - boolean (optional, default false).
 
 ### Method: value(val)
 - val - number

@@ -135,5 +135,12 @@ ain.once('ready', function () {
 
 ## Documentation
 
+- pins
+- pullTypes
+- Ain
+- Button
+- Gpio
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
+- Pwm
+- once
 
