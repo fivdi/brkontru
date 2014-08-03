@@ -37,7 +37,7 @@ ecap0 | P9_42
 - value - number (optional)
 
 Returns the current duty if no value is specified, else sets duty to the
-specified value. The unit for period is nanoseconds.
+specified value. The unit for duty is nanoseconds.
 
 ### Method: enabled(value)
 - value - boolean (optional)
