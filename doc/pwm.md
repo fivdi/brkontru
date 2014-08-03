@@ -30,7 +30,7 @@ Module | Pins
 :---: | :---:
 ehrpwm0 | P9_21, P9_22
 ehrpwm1 | P9_14, P9_16
-ehrpwm2 | P8_13, P9_19
+ehrpwm2 | P8_13, P8_19
 ecap0 | P9_42
 
 ### Method: duty(value)
