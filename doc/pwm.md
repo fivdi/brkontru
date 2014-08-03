@@ -33,16 +33,6 @@ ehrpwm1 | P9_14, P9_16
 ehrpwm2 | P8_13, P9_19
 ecap0 | P9_42
 
-var pwmPins = {
-  p8_13: {subSystem: 2, module: 'ehrpwm2', channel: 1, muxMode: 4, mux: 'ehrpwm2B'},
-  p8_19: {subSystem: 2, module: 'ehrpwm2', channel: 0, muxMode: 4, mux: 'ehrpwm2A'},
-  p9_14: {subSystem: 1, module: 'ehrpwm1', channel: 0, muxMode: 6, mux: 'ehrpwm1A'},
-  p9_16: {subSystem: 1, module: 'ehrpwm1', channel: 1, muxMode: 6, mux: 'ehrpwm1B'},
-  p9_21: {subSystem: 0, module: 'ehrpwm0', channel: 1, muxMode: 3, mux: 'ehrpwm0B'},
-  p9_22: {subSystem: 0, module: 'ehrpwm0', channel: 0, muxMode: 3, mux: 'ehrpwm0A'},
-  p9_42: {subSystem: 0, module: 'ecap0',   channel: 0, muxMode: 0, mux: 'eCAP0_in_PWM0_out'}
-};
-
 ### Method: duty(value)
 - value - number (optional)
 
