@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * renamed Ain#value to Ain#rawValue
+
 0.6.1 / 2014-08-02
 ==================
 

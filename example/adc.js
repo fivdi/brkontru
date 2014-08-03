@@ -3,7 +3,7 @@ var bot = require('../'),
 
 ain.once('ready', function () {
   setInterval(function () {
-    console.log(ain.value());
+    console.log(ain.rawValue());
   }, 1000);
 });
 
