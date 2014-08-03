@@ -33,7 +33,7 @@ The following options are supported:
 - isActiveLow - boolean (optional, default false)
 
 ### Method: value(val)
-- val - number
+- val - number (Led.ON or Led.OFF)
 
 Turn the LED on or off. val should be Led.ON or Led.OFF.
 

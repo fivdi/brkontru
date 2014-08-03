@@ -141,6 +141,6 @@ ain.once('ready', function () {
 - [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md)
 - Gpio
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
-- Pwm
+- [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md)
 - once
 
