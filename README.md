@@ -135,12 +135,12 @@ ain.once('ready', function () {
 
 ## Documentation
 
-- pins
-- [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md)
-- Ain
-- [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md)
-- Gpio
-- [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
-- [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md)
-- once
+- pins object
+- [pullTypes object](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md)
+- Ain class
+- [Button class](https://github.com/fivdi/brkontru/blob/master/doc/button.md)
+- Gpio class
+- [Led class](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
+- [Pwm class](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md)
+- once function
 
