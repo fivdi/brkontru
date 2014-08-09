@@ -3,8 +3,9 @@
 Many objects emit a 'ready' event after their construction has completed
 indicating that the object is now read for usage.
 
-The once function is a helper function that will wait for an array of objects
-to emit an event and invoke a listener after they have all emitted that event.
+The once function is a helper function that will wait for all objects in an
+array of objects to emit an event and invoke a listener after they have all
+emitted that event.
 
 ```js
 var bot = require('brkontru'),
