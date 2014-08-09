@@ -1,4 +1,4 @@
-## pins Object - Pins
+## pins Object - Header Pins
 
 An object with one pin property for each pin available for usage. Typically,
 pin objects are passed to constructors.
