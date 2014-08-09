@@ -1,7 +1,16 @@
-## pins Object - Pull Type Constants
+## pins Object - Pins
 
-An object with one property for each pin on the BeagleBone Black that can be
-used.
+An object with one pin property for each pin on the BeagleBone Black that can
+be used. Typically, pin objects are passed to constructors.
+
+```js
+var bot = require('brkontru'),
+  button = new bot.Button(bot.pins.p9_24),
+  led1 = new bot.Led(bot.pins.p9_26),
+  led2 = new bot.Pwm(bot.pins.p9_42),
+  ain = new bot.Ain(bot.pins.p9_36);
+```
+
 
 Name | GPIO | PWM | ADC
 :---: | :---: | :---: | :---:
@@ -11,24 +20,24 @@ Name | GPIO | PWM | ADC
   p8_10 | 68 | |
   p8_11 | 45 | |
   p8_12 | 44 | |
-  p8_13 | 23 | X |
+  p8_13 | 23 | ehrpwm2B |
   p8_14 | 26 | |
   p8_15 | 47 | |
   p8_16 | 46 | |
   p8_17 | 27 | |
   p8_18 | 65 | |
-  p8_19 | 22 | X |
+  p8_19 | 22 | ehrpwm2A |
   p8_26 | 61 | |
   p9_11 | 30 | |
   p9_12 | 60 | |
   p9_13 | 31 | |
-  p9_14 | 50 | X |
+  p9_14 | 50 | ehrpwm1A |
   p9_15 | 48 | |
-  p9_16 | 51 | X |
+  p9_16 | 51 | ehrpwm1B |
   p9_17 | 5 | |
   p9_18 | 4 | | |
-  p9_21 | 3 | X |
-  p9_22 | 2 | X |
+  p9_21 | 3 | ehrpwm0B |
+  p9_22 | 2 | ehrpwm0A |
   p9_23 | 49 | |
   p9_24 | 15 | |
   p9_26 | 14 | |
@@ -42,5 +51,5 @@ Name | GPIO | PWM | ADC
   p9_39 | | | AIN0
   p9_40 | | | AIN1
   p9_41 | 20 | |
-  p9_42 | 7 | X |
+  p9_42 | 7 | eCAP0_in_PWM0_out |
 
