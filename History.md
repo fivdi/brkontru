@@ -2,6 +2,7 @@ Unpublished
 ===========
 
   * renamed Ain#value to Ain#rawValue
+  * documentation
 
 0.6.1 / 2014-08-02
 ==================

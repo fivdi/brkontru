@@ -139,7 +139,7 @@ ain.once('ready', function () {
 
 - Ain - Analog to Digital Conversion
 - [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md) - Buttons and Switches
-- Gpio - General Purpose Input Output
+- [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
 - [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
 
