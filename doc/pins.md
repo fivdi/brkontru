@@ -1,7 +1,7 @@
 ## pins Object - Pins
 
-An object with one pin property for each pin on the BeagleBone Black that can
-be used. Typically, pin objects are passed to constructors.
+An object with one pin property for each pin available for usage. Typically,
+pin objects are passed to constructors.
 
 ```js
 var bot = require('brkontru'),
