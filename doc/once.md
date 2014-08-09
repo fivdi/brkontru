@@ -1,4 +1,4 @@
-## once Function - One Time Listener  
+## once Function - One Time Listener
 
 Many objects are EventEmitters that emit a 'ready' event after their
 construction has completed indicating that the object is ready for usage.

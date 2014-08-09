@@ -137,18 +137,18 @@ ain.once('ready', function () {
 
 ### Classes
 
-- Ain
-- [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md)
-- Gpio
-- [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
-- [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md)
+- Ain - Analog to Digital Conversion
+- [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md) - Buttons and Switches
+- Gpio - General Purpose Input Output
+- [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
+- [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
 
 ### Objects
 
-- [pins](https://github.com/fivdi/brkontru/blob/master/doc/pins.md)
-- [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md)
+- [pins](https://github.com/fivdi/brkontru/blob/master/doc/pins.md) - Header Pins
+- [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md) - Pull Type Constants
 
 ### Functions
 
-- [once](https://github.com/fivdi/brkontru/blob/master/doc/once.md)
+- [once](https://github.com/fivdi/brkontru/blob/master/doc/once.md) - One Time Listener
 
