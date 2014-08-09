@@ -137,7 +137,7 @@ ain.once('ready', function () {
 
 ### Classes
 
-- Ain - Analog to Digital Conversion
+- [Ain](https://github.com/fivdi/brkontru/blob/master/doc/ain.md) - Analog to Digital Conversion
 - [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md) - Buttons and Switches
 - [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes

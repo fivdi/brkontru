@@ -1,7 +1,7 @@
 ## Pwm Class - Pulse Width Modulation
 
 ### Constructor: Pwm(pin, options)
-- pin - a pin object
+- pin - a pwm capable pin object
 - options - object (optional)
 
 Creates a Pwm object for controlling a PWM capable output pin. The period and
