@@ -23,9 +23,9 @@ bot.once('ready', pwms, function() {
 ```
 
 ### Function: once(event, emitters, listener)
-event - string
-emitters - an array of EventEmitters
-listener - callback
+- event - string
+- emitters - an array of EventEmitters
+- listener - callback
 
 Adds a one time listener for the event to each emitter and waits for that
 event to be emitted by each emitter. After all emitters have fired the event
