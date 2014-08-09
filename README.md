@@ -142,5 +142,5 @@ ain.once('ready', function () {
 - Gpio class
 - [Led class](https://github.com/fivdi/brkontru/blob/master/doc/led.md)
 - [Pwm class](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md)
-- once function
+- [once function](https://github.com/fivdi/brkontru/blob/master/doc/once.md)
 

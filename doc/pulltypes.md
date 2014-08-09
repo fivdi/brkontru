@@ -1,4 +1,4 @@
-## pullTypes - Pull Type Constants
+## pullTypes Object - Pull Type Constants
 
 When creating objects such as Buttons and Gpios there's a pullType option
 for specifying whether or not the internal pull-up or pull-down resistor
