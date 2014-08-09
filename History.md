@@ -1,3 +1,8 @@
+0.7.4 / 2014-08-09
+==================
+
+  * downgrade from Node.js v0.11.13 to v0.10.30 and bump version again to fix 'shasum check failed' error when installing with npm (hopefully)
+
 0.7.3 / 2014-08-09
 ==================
 
