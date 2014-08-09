@@ -8,7 +8,7 @@ function test() {
     ops;
 
   for (ops = 0; ops !== 3000; ops += 1) {
-    value = ain.value();
+    value = ain.rawValue();
   }
 
   time = process.hrtime(time);
