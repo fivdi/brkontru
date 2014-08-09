@@ -35,7 +35,8 @@ The following options are supported:
 ### Method: value(val)
 - val - number (Led.ON or Led.OFF)
 
-Turn the LED on or off. val should be Led.ON or Led.OFF.
+Turn the LED on or off. val should be Led.ON or 0 to turn the Led off, or
+Led.OFF or 1 to turn the Led on.
 
 ### Method: blink(delayOn, delayOff)
 - delayOn - number (optional, default 500)
