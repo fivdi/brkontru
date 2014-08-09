@@ -135,7 +135,7 @@ ain.once('ready', function () {
 
 ## Documentation
 
-- pins object
+- [pins object](https://github.com/fivdi/brkontru/blob/master/doc/pins.md)
 - [pullTypes object](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md)
 - Ain class
 - [Button class](https://github.com/fivdi/brkontru/blob/master/doc/button.md)
