@@ -1,3 +1,8 @@
+0.7.2 / 2014-08-09
+==================
+
+  * bump version to fix 'shasum check failed' error when installing with npm
+
 0.7.1 / 2014-08-09
 ==================
 
