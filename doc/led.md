@@ -1,4 +1,4 @@
-## Class Led - Light Emitting Diode
+## Led Class - Light Emitting Diode
 
 The following circuit shows how to wire an LED to pin 26 on the P9 header.
 

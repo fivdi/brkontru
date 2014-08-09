@@ -1,4 +1,4 @@
-## Class Button - Buttons and Switches
+## Button Class - Buttons and Switches
 
 The following circuit shows how to wire a button to pin 24 on the P9 header.
 When the button is pressed, P9_24 will be pulled low. When it's released,

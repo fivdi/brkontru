@@ -1,4 +1,4 @@
-## Class Pwm - Pulse Width Modulation
+## Pwm Class - Pulse Width Modulation
 
 ### Constructor: Pwm(pin, options)
 - pin - a pin object
