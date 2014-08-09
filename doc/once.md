@@ -20,7 +20,7 @@ var bot = require('brkontru'),
   ];
 
 bot.once('ready', pwms, function() {
-}
+});
 ```
 
 ### Function: once(event, emitters, listener)
