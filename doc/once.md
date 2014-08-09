@@ -1,7 +1,7 @@
 ## once Function - One Time Listener  
 
-Many objects EventEmitters that emit a 'ready' event after their construction
-has completed indicating that the object is ready for usage.
+Many objects are EventEmitters that emit a 'ready' event after their
+construction has completed indicating that the object is ready for usage.
 
 The once function is a helper function that will wait for all objects in an
 array of objects to emit an event and invoke a listener after they have all

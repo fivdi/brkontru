@@ -11,7 +11,6 @@ var bot = require('brkontru'),
   ain = new bot.Ain(bot.pins.p9_36);
 ```
 
-
 Name | GPIO | PWM | ADC
 :---: | :---: | :---: | :---:
   p8_07 | 66 | |
