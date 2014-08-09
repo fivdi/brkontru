@@ -1,12 +1,18 @@
 ## Gpio Class - General Purpose Input Output
 
-The program below uses two GPIOs. One as an input to sense the state of a
-button and one as an output to control an LED. When the button is pressed, the
-LED will turn on, when it's released, the LED will turn off.
+The following circuit shows how to wire a button to pin 24 and an LED to pin
+26 on the P9 header. When the button is pressed, P9_24 will be pulled low.
+When it's released, P9_24 will be pulled high as the internal pull-up resistor
+for P9_24 will be enabled.
+
+<img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
+
+The program below can be used with this circuit. When the button is pressed,
+the LED will turn on, when it's released, the LED will turn off.
 
 ```js
 var bot = require('brkontru'),
-  button = new bot.Gpio(bot.pins.p9_23, {
+  button = new bot.Gpio(bot.pins.p9_24, {
     direction: bot.Gpio.IN,
     pullType: bot.pullTypes.PULL_UP
   }),
@@ -14,7 +20,7 @@ var bot = require('brkontru'),
 
 bot.once('ready', [button, led], function () {
   setInterval(function() {
-    led.value(button.value());
+    led.value(button.value() ^ 1);
   }, 20);
 });
 ```
