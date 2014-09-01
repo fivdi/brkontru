@@ -2,8 +2,6 @@
 
 Easy access to the BeagleBone Black GPIO expansion headers.
 
-Work in progress!
-
 ## Installation
 
     $ npm install brkontru
@@ -15,9 +13,9 @@ rev. A5C.
 
  * LEDs - Light Emitting Diodes
  * Buttons and Switches
+ * ADC - Analog to Digital Conversion
  * GPIO - General Purpose Input Output
  * PWM - Pulse Width Modulation
- * ADC - Analog to Digital Conversion
 
 ## Usage
 
