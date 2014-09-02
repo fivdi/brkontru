@@ -1,4 +1,4 @@
-// Assumes uart2 is wired to uart4 and sends some data from uart2 to uart4.
+// Assumes uart2 is wired to uart4. Sends data from uart2 to uart4.
 var bot = require('../'),
   Uart = bot.Uart,
   uart2 = new Uart('/dev/ttyO2', {baudRate: Uart.B3000000}),
@@ -12,7 +12,7 @@ bot.once('ready', [uart2, uart4], function () {
 
 uart4.on('data', function (chunk) {
   charsReceived += chunk.length;
-  console.log(charsReceived + ' ' + chunk.toString());
+  console.log(charsReceived + ' ' + chunk);
   if (charsReceived === buf.length) {
     uart2.close();
     uart4.end();
