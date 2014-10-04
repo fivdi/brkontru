@@ -3,4 +3,5 @@ NAN_METHOD(SetCanonical);
 NAN_METHOD(GetBaudRate);
 NAN_METHOD(SetBaudRate);
 NAN_METHOD(SetRawMode);
+NAN_METHOD(SetRawMode2);
 

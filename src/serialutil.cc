@@ -141,6 +141,35 @@ NAN_METHOD(SetRawMode) {
   NanReturnUndefined();
 }
 
+NAN_METHOD(SetRawMode2) {
+  NanScope();
+
+  if (args.Length() < 1 || !args[0]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to setRawMode(int fd)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  tio.c_iflag &= ~(IGNBRK | BRKINT | PARMRK | ISTRIP | INLCR | IGNCR | ICRNL | IXON);
+  tio.c_oflag &= ~OPOST;
+  tio.c_lflag &= ~(ECHO | ECHONL | ICANON | ISIG | IEXTEN);
+  tio.c_cflag &= ~(CSIZE | PARENB);
+  tio.c_cflag |= CS8;  
+
+  if (tcsetattr(fd, TCSADRAIN, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
 void Init(v8::Handle<v8::Object> exports) {
   exports->Set(NanNew<v8::String>("B0"), NanNew<v8::Number>(B0));
   exports->Set(NanNew<v8::String>("B50"), NanNew<v8::Number>(B50));
@@ -193,6 +222,10 @@ void Init(v8::Handle<v8::Object> exports) {
   exports->Set(
     NanNew<v8::String>("setRawMode"),
     NanNew<v8::FunctionTemplate>(SetRawMode)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("setRawMode2"),
+    NanNew<v8::FunctionTemplate>(SetRawMode2)->GetFunction()
   );
 }
 
