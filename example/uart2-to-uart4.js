@@ -1,8 +1,8 @@
 // Assumes uart2 is wired to uart4. Sends data from uart2 to uart4.
 var bot = require('../'),
   Uart = bot.Uart,
-  uart2 = new Uart('/dev/ttyO2', {baudRate: Uart.B3000000}),
-  uart4 = new Uart('/dev/ttyO4', {baudRate: Uart.B3000000}),
+  uart2 = new Uart(Uart.UART2, {baudRate: Uart.B3000000}),
+  uart4 = new Uart(Uart.UART4, {baudRate: Uart.B3000000}),
   buf = Array(10000 + 1).join('hello'),
   charsReceived = 0;
 

@@ -1,5 +1,5 @@
 var Uart = require('../').Uart,
-  uart4 = new Uart('/dev/ttyO4', {baudRate: Uart.B115200}),
+  uart4 = new Uart(Uart.UART4, {baudRate: Uart.B115200}),
   sendBuf = new Buffer([0]);
   bytesReceived = 0;
 
