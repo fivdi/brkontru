@@ -6,7 +6,7 @@ Easy access to the BeagleBone Black GPIO expansion headers.
 
     $ npm install brkontru
 
-Tested with Debian Image 2014-05-14 and Node.js v0.10.25 on a BeagleBone Black
+Tested with Debian Image 2014-09-03 and Node.js v0.10.25 on a BeagleBone Black
 rev. A5C.
 
 ## Features
@@ -16,6 +16,7 @@ rev. A5C.
  * ADC - Analog to Digital Conversion
  * GPIO - General Purpose Input Output
  * PWM - Pulse Width Modulation
+ * UART - Serial Communication
 
 ## Usage
 
@@ -140,6 +141,7 @@ ain.once('ready', function () {
 - [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
 - [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
+- Uart - Serial Communication
 
 ### Objects
 
