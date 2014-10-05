@@ -1,7 +1,7 @@
 {
   "name": "brkontru",
   "description": "Break on Through - Easy access to the BeagleBone Black GPIO expansion headers",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "author": "fivdi",
   "keywords": [
     "beaglebone",
