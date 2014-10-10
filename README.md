@@ -1,6 +1,6 @@
 ## brkontru - Break On Through (To The Other Side!)
 
-Easy access to the BeagleBone Black GPIO expansion headers.
+ADC, GPIO, PWM, UARTs, and more on the BeagleBone Black.
 
 ## Installation
 
