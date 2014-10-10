@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * gpio.pullType method for pull-up pull-down resistors
+
 0.8.0 / 2014-10-05
 ==================
 

@@ -43,6 +43,14 @@ The following options are supported:
 Returns the current value of the GPIO if no val is specified, else sets the
 value to the specified val.
 
+### Method: pullType(value)
+- value - one of the pullTypes constants (optional)
+
+GPIO pins have internal pull-up and pull-down resistors that can be enabled.
+Returns the current pullType if no value is specified, else sets pullType to
+the specified value. 
+See [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md).
+
 ### Event: 'ready'
 Emitted after the constructor has completed creation of the Gpio object
 indicating that the object is now ready for usage.
