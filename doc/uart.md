@@ -30,9 +30,14 @@ rate to the specified rate.
 Close underlying resources.
 
 ### Event: 'open'
+Emitted after the constructor has completed creation of the Uart object
+indicating that the object is now ready for usage. Identical to the ready
+event.
+
 ### Event: 'ready'
 Emitted after the constructor has completed creation of the Uart object
-indicating that the object is now ready for usage.
+indicating that the object is now ready for usage. Identical to the open
+event.
 
 ### Event: 'close'
 Emitted when the underlying resources have been closed. 
