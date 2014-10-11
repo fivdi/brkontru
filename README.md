@@ -141,7 +141,7 @@ ain.once('ready', function () {
 - [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
 - [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
-- Uart - Serial Communication
+- [Uart](https://github.com/fivdi/brkontru/blob/master/doc/uart.md) - Serial Communication
 
 ### Objects
 
