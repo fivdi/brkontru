@@ -70,7 +70,7 @@ int main(void) {
     // Enable U0-RXD on PIO0_5 (Pin 1) PINASSIGN0(15:8)
     LPC_SWM->PINASSIGN0 = 0xffff0504;
 
-    // UART0 baud rate 9600
+    // UART0 baud rate 115200
     LPC_SYSCON->UARTCLKDIV = 1;
     LPC_SYSCON->UARTFRGDIV = 255;
     LPC_SYSCON->UARTFRGMULT = 207; // 9600->90,  115200->207
