@@ -34,8 +34,8 @@ can be used to configure the direction and pull type for the GPIO. A Gpio
 object is an EventEmitter.
 
 The following options are supported:
-- direction - string (optional, default Gpio.OUT)
-- pullType: number (optional, default pullTypes.NONE)
+- direction - Gpio.IN, Gpio.OUT, Gpio.OUT_HIGH, or Gpio.OUT_LOW (optional, default Gpio.OUT)
+- pullType: pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.NONE)
 
 ### Method: direction(value)
 - value - Gpio.IN or Gpio.OUT (optional)
@@ -50,7 +50,7 @@ Returns the current interrupting edge for the GPIO if no value is specified,
 else sets the interrupting edge to the specified value.
 
 ### Method: pullType(value)
-- value - one of the pullTypes constants (optional)
+- value -  pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional)
 
 GPIO pins have internal pull-up and pull-down resistors that can be enabled.
 Returns the current pullType if no value is specified, else sets the pullType
@@ -58,7 +58,7 @@ to the specified value.
 See [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md).
 
 ### Method: value(val)
-- val - number (optional, 0 or 1 if specified)
+- val - 0 or 1 (optional)
 
 Returns the current value of the GPIO if no val is specified, else sets the
 value to the specified val.
@@ -71,12 +71,10 @@ indicating that the object is now ready for usage.
 Emitted on error.
 
 ### Constant: Gpio.IN
-Passed to the constructor as the direction option in the options object to
-configure the GPIO as an input.
+Indicates that the GPIO is an input.
 
 ### Constant: Gpio.OUT
-Passed to the constructor as the direction option in the options object to
-configure the GPIO as an output.
+Indicates that the GPIO is an output.
 
 ### Constant: Gpio.OUT_HIGH
 Passed to the constructor as the direction option in the options object to
@@ -85,4 +83,16 @@ configure the GPIO as an output. Sets the output high.
 ### Constant: Gpio.OUT_LOW
 Passed to the constructor as the direction option in the options object to
 configure the GPIO as an output. Sets the output low.
+
+### Constant: Gpio.NONE
+Indicates that the GPIO does not fire interrupts.
+
+### Constant: Gpio.FALLING
+Indicates that the GPIO fires interrupts on falling edges.
+
+### Constant: Gpio.RISING
+Indicates that the GPIO fires interrupts on rising edges.
+
+### Constant: Gpio.BOTH
+Indicates that the GPIO fires interrupts on both rising and falling edges.
 
