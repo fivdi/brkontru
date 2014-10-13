@@ -44,10 +44,10 @@ Returns the current direction of the GPIO if no value is specified, else sets
 the direction to the specified value.
 
 ### Method: edge(value)
-- value - Gpio.NONE, Gpio,FALLING, Gpio.RISING, or Gpio.BOTH (optional)
+- value - Gpio.NONE, Gpio.FALLING, Gpio.RISING, or Gpio.BOTH (optional)
 
-Returns the current interrupt edge for the GPIO if no value is specified,
-else sets the interrupt edge to the specified value.
+Returns the current interrupting edge for the GPIO if no value is specified,
+else sets the interrupting edge to the specified value.
 
 ### Method: pullType(value)
 - value - one of the pullTypes constants (optional)
