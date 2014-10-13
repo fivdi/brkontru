@@ -1,6 +1,7 @@
 Unpublished
 ===========
 
+  * gpio interrupt support
   * direction and edge methods for gpio objects
 
 0.9.0 / 2014-10-11

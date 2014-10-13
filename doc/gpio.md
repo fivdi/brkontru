@@ -30,11 +30,12 @@ bot.once('ready', [button, led], function () {
 - options - object (optional)
 
 Creates a Gpio object for controlling a GPIO header pin. The options object
-can be used to configure the direction and pull type for the GPIO. A Gpio
-object is an EventEmitter.
+can be used to configure the direction, interrupting edge, and pull type for
+the GPIO. A Gpio object is an EventEmitter.
 
 The following options are supported:
 - direction - Gpio.IN, Gpio.OUT, Gpio.OUT_HIGH, or Gpio.OUT_LOW (optional, default Gpio.OUT)
+- edge - Gpio.NONE, Gpio.FALLING, Gpio.RISING, or Gpio.BOTH (optional, default Gpio.NONE)
 - pullType: pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.NONE)
 
 ### Method: direction(value)
@@ -66,6 +67,15 @@ value to the specified val.
 ### Event: 'ready'
 Emitted after the constructor has completed creation of the Gpio object
 indicating that the object is now ready for usage.
+
+### Event: 'falling'
+Emitted on falling edge interrupts.
+
+### Event: 'rising'
+Emitted on rising edge interrupts.
+
+### Event: 'both'
+Emitted on falling and rising edge interrupts.
 
 ### Event: 'error'
 Emitted on error.
