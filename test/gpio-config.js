@@ -29,5 +29,19 @@ gpio.once('ready', function () {
 
   gpio.direction(Gpio.IN);
   assert.equal(gpio.direction(), Gpio.IN, 'expected Gpio.IN');
+
+  assert.equal(gpio.edge(), Gpio.NONE, 'expected Gpio.NONE');
+
+  gpio.edge(Gpio.FALLING);
+  assert.equal(gpio.edge(), Gpio.FALLING, 'expected Gpio.FALLING');
+
+  gpio.edge(Gpio.RISING);
+  assert.equal(gpio.edge(), Gpio.RISING, 'expected Gpio.RISING');
+
+  gpio.edge(Gpio.BOTH);
+  assert.equal(gpio.edge(), Gpio.BOTH, 'expected Gpio.BOTH');
+
+  gpio.edge(Gpio.NONE);
+  assert.equal(gpio.edge(), Gpio.NONE, 'expected Gpio.NONE');
 });
 

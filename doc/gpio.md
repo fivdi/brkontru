@@ -37,11 +37,17 @@ The following options are supported:
 - direction - string (optional, default Gpio.OUT)
 - pullType: number (optional, default pullTypes.NONE)
 
-### Method: value(val)
-- val - number (optional, 0 or 1 if specified)
+### Method: direction(value)
+- value - Gpio.IN or Gpio.OUT (optional)
 
-Returns the current value of the GPIO if no val is specified, else sets the
-value to the specified val.
+Returns the current direction of the GPIO if no value is specified, else sets
+the direction to the specified value.
+
+### Method: edge(value)
+- value - Gpio.NONE, Gpio,FALLING, Gpio.RISING, or Gpio.BOTH (optional)
+
+Returns the current interrupt edge for the GPIO if no value is specified,
+else sets the interrupt edge to the specified value.
 
 ### Method: pullType(value)
 - value - one of the pullTypes constants (optional)
@@ -50,6 +56,12 @@ GPIO pins have internal pull-up and pull-down resistors that can be enabled.
 Returns the current pullType if no value is specified, else sets the pullType
 to the specified value. 
 See [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md).
+
+### Method: value(val)
+- val - number (optional, 0 or 1 if specified)
+
+Returns the current value of the GPIO if no val is specified, else sets the
+value to the specified val.
 
 ### Event: 'ready'
 Emitted after the constructor has completed creation of the Gpio object
