@@ -47,8 +47,8 @@ value to the specified val.
 - value - one of the pullTypes constants (optional)
 
 GPIO pins have internal pull-up and pull-down resistors that can be enabled.
-Returns the current pullType if no value is specified, else sets pullType to
-the specified value. 
+Returns the current pullType if no value is specified, else sets the pullType
+to the specified value. 
 See [pullTypes](https://github.com/fivdi/brkontru/blob/master/doc/pulltypes.md).
 
 ### Event: 'ready'

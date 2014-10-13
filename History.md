@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * direction method for gpio objects
+
 0.9.0 / 2014-10-11
 ==================
 
