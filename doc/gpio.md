@@ -1,4 +1,4 @@
-## Gpio Class - General Purpose Input Output
+## Gpio Class - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
 
 The following circuit shows how to wire a button to pin 24 and an LED to pin
 26 on the P9 header. When the button is pressed, P9_24 will be pulled low.
@@ -48,7 +48,9 @@ the direction to the specified value.
 - value - Gpio.NONE, Gpio.FALLING, Gpio.RISING, or Gpio.BOTH (optional)
 
 Returns the current interrupting edge for the GPIO if no value is specified,
-else sets the interrupting edge to the specified value.
+else sets the interrupting edge to the specified value. Setting edge to any
+value other than Gpio.NONE will result in 'falling', 'rising', and/or 'both'
+events being emitted when the value of the GPIO changes.
 
 ### Method: pullType(value)
 - value -  pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional)
@@ -84,15 +86,16 @@ Emitted on error.
 Indicates that the GPIO is an input.
 
 ### Constant: Gpio.OUT
-Indicates that the GPIO is an output.
+Indicates that the GPIO is an output. When passed to the Gpio constuctor as the
+direction option, the output will be initially low.
 
 ### Constant: Gpio.OUT_HIGH
-Passed to the constructor as the direction option in the options object to
-configure the GPIO as an output. Sets the output high.
+Indicates that the GPIO is an output.  When passed to the Gpio constuctor as
+the direction option, the output will be initially high.
 
 ### Constant: Gpio.OUT_LOW
-Passed to the constructor as the direction option in the options object to
-configure the GPIO as an output. Sets the output low.
+Indicates that the GPIO is an output.  When passed to the Gpio constuctor as
+the direction option, the output will be initially low.
 
 ### Constant: Gpio.NONE
 Indicates that the GPIO does not fire interrupts.

@@ -14,7 +14,7 @@ rev. A5C.
  * LEDs - Light Emitting Diodes
  * Buttons and Switches
  * ADC - Analog to Digital Conversion
- * GPIO - General Purpose Input Output
+ * GPIO - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
  * PWM - Pulse Width Modulation
  * UART - Serial Communication
 
@@ -138,7 +138,7 @@ ain.once('ready', function () {
 
 - [Ain](https://github.com/fivdi/brkontru/blob/master/doc/ain.md) - Analog to Digital Conversion
 - [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md) - Buttons and Switches
-- [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
+- [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
 - [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
 - [Uart](https://github.com/fivdi/brkontru/blob/master/doc/uart.md) - Serial Communication
