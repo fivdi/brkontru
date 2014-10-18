@@ -9,19 +9,19 @@ communication. A Uart is a streams2 duplex stream. The options object can be
 used to configure the various aspects of the UART such as its baud rate. 
 
 The following options are supported:
-- baudRate: number (optional, default Uart.B38400, one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants))
+- baudRate: one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants) (optional, default Uart.B38400)
 - highWaterMark: number (optional, default 512)
 - encoding: string (optional, default null)
 
 Uart is a streams2 [Duplex](http://nodejs.org/api/stream.html#stream_class_stream_duplex)
-that implements both the
+stream that implements both the
 [Readable](http://nodejs.org/api/stream.html#stream_class_stream_readable) and
 [Writable](http://nodejs.org/api/stream.html#stream_class_stream_writable)
 interfaces. Internally, [Duplexify](https://www.npmjs.org/package/duplexify)
 is used to achaive this.
 
 ### Method: baudRate(rate)
-- rate - number (optional, one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants))
+- rate: one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants) (optional)
 
 Returns the baud rate of the UART if no rate is specified, else sets the baud
 rate to the specified rate.

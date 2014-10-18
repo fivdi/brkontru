@@ -1,8 +1,13 @@
-0.17.0 / 2014-10-17
+Unpublished
+===========
+
+  * isActiveLow option and method for Gpio objects
+
+0.10.0 / 2014-10-17
 ===================
 
   * gpio interrupt support
-  * direction and edge methods for gpio objects
+  * direction and edge methods for Gpio objects
 
 0.9.0 / 2014-10-11
 ==================

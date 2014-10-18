@@ -43,5 +43,14 @@ gpio.once('ready', function () {
 
   gpio.edge(Gpio.NONE);
   assert.equal(gpio.edge(), Gpio.NONE, 'expected Gpio.NONE');
+
+  gpio.pullType(pullTypes.PULL_UP);
+
+  assert.equal(gpio.isActiveLow(), false, 'expected isActiveLow false');
+
+  gpio.isActiveLow(true);
+  assert.equal(gpio.isActiveLow(), true, 'expected isActiveLow true');
+
+  assert.equal(gpio.value(), 0, 'expected value 0');
 });
 

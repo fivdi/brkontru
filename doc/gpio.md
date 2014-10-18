@@ -1,4 +1,7 @@
-## Gpio Class - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
+## Gpio Class - General Purpose Input Output
+
+Gpio objects can be used to interact with GPIOs. They support input, output,
+interrupt detection, pull-up resistors, and pull-down resistors.
 
 The following circuit shows how to wire a button to pin 24 and an LED to pin
 26 on the P9 header. When the button is pressed, P9_24 will be pulled low.
@@ -36,6 +39,7 @@ the GPIO. A Gpio object is an EventEmitter.
 The following options are supported:
 - direction - Gpio.IN, Gpio.OUT, Gpio.OUT_HIGH, or Gpio.OUT_LOW (optional, default Gpio.OUT)
 - edge - Gpio.NONE, Gpio.FALLING, Gpio.RISING, or Gpio.BOTH (optional, default Gpio.NONE)
+- isActiveLow - true or false (optional, default false)
 - pullType: pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.NONE)
 
 ### Method: direction(value)
@@ -49,8 +53,14 @@ the direction to the specified value.
 
 Returns the current interrupting edge for the GPIO if no value is specified,
 else sets the interrupting edge to the specified value. Setting edge to any
-value other than Gpio.NONE will result in 'falling', 'rising', and/or 'both'
+value other than Gpio.NONE will result in 'falling' and/or 'rising', and 'both'
 events being emitted when the value of the GPIO changes.
+
+### Method: isActiveLow(value)
+- value - true or false (optional)
+
+Returns the current active-low state of the GPIO if no value is specified, else
+sets the active-low state to the specified value.
 
 ### Method: pullType(value)
 - value -  pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional)

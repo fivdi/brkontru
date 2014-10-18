@@ -30,17 +30,17 @@ four onboard user LEDs or an LED connected up to an appropriate header pin.
 An Led object is an EventEmitter.
 
 The following options are supported:
-- isActiveLow - boolean (optional, default false)
+- isActiveLow - true or false (optional, default false)
 
 ### Method: value(val)
-- val - number (Led.ON or Led.OFF)
+- val - Led.ON or Led.OFF
 
 Turn the LED on or off. val should be Led.ON or 1 to turn the Led on, or
 Led.OFF or 0 to turn the Led off.
 
 ### Method: blink(delayOn, delayOff)
-- delayOn - number (optional, default 500)
-- delayOff - number (optional, default 500)
+- delayOn - on delay in milliseconds (optional, default 500 milliseconds)
+- delayOff - off delay in milliseconds (optional, default 500 milliseconds)
 
 Flash the LED at a fixed rate. delayOn and delayOff specify the on and off time
 in milliseconds. If delayOn or delayOff is not specified, it will default to

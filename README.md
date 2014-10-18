@@ -6,15 +6,12 @@ ADC, GPIO, PWM, UARTs, and more on the BeagleBone Black.
 
     $ npm install brkontru
 
-Tested with Debian Image 2014-09-03 and Node.js v0.10.25 on a BeagleBone Black
-rev. A5C.
-
 ## Features
 
  * LEDs - Light Emitting Diodes
  * Buttons and Switches
  * ADC - Analog to Digital Conversion
- * GPIO - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
+ * GPIO - General Purpose Input Output
  * PWM - Pulse Width Modulation
  * UART - Serial Communication
 
@@ -138,7 +135,7 @@ ain.once('ready', function () {
 
 - [Ain](https://github.com/fivdi/brkontru/blob/master/doc/ain.md) - Analog to Digital Conversion
 - [Button](https://github.com/fivdi/brkontru/blob/master/doc/button.md) - Buttons and Switches
-- [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output with Interrupt Detection, Pull-Up, and Pull-Down Resistor Support
+- [Gpio](https://github.com/fivdi/brkontru/blob/master/doc/gpio.md) - General Purpose Input Output
 - [Led](https://github.com/fivdi/brkontru/blob/master/doc/led.md) - Light Emitting Diodes
 - [Pwm](https://github.com/fivdi/brkontru/blob/master/doc/pwm.md) - Pulse Width Modulation
 - [Uart](https://github.com/fivdi/brkontru/blob/master/doc/uart.md) - Serial Communication
@@ -151,4 +148,9 @@ ain.once('ready', function () {
 ### Functions
 
 - [once](https://github.com/fivdi/brkontru/blob/master/doc/once.md) - One Time Listener
+
+### Additional Information
+
+Tested with Debian Image 2014-09-03 and Node.js v0.10.25 on the BeagleBone Black
+rev. A5C.
 

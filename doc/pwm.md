@@ -10,13 +10,13 @@ frequency and duty cycle. Additional options are available for configuring the
 PWM polarity and whether or not the PWM signal is initially enabled.
 
 The following options are supported:
-- period: number (optional, default 500000 nanoseconds)
-- duty: number (optional, default 0 nanoseconds)
-- enabled: boolean (optional, default true)
-- polarity - number (optional, default Pwm.LOW)
+- period: period in nannoseconds (optional, default 500000 nanoseconds)
+- duty: duty in nanoseconds (optional, default 0 nanoseconds)
+- enabled: true or false (optional, default true)
+- polarity - Pwm.LOW or Pwm.HIGH (optional, default Pwm.LOW)
 
 ### Method: period(value)
-- value - number (optional)
+- value - period in nannoseconds (optional)
 
 Returns the current period if no value is specified, else sets period to the
 specified value. The unit for period is nanoseconds.
@@ -34,19 +34,19 @@ ehrpwm2 | P8_13, P8_19
 ecap0 | P9_42
 
 ### Method: duty(value)
-- value - number (optional)
+- value - duty in nannoseconds (optional)
 
 Returns the current duty if no value is specified, else sets duty to the
 specified value. The unit for duty is nanoseconds.
 
 ### Method: enabled(value)
-- value - boolean (optional)
+- value - true or false (optional)
 
 Returns a boolean specifying whether or not the PWM is enabled, if no value is
 specified, else enables or disables the PWM depending on the value specified.
 
 ### Method: polarity(value)
-- value - number (optional, Pwm.LOW or Pwm.HIGH)
+- value - Pwm.LOW or Pwm.HIGH (optional)
 
 Returns Pwm.LOW or Pwm.HIGH specifying the polarity of the PWM, if no value is
 specified, else sets the polarity to the specified value.
