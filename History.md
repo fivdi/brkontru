@@ -2,6 +2,8 @@ Unpublished
 ===========
 
   * isActiveLow option and method for Gpio objects
+  * scaledMin and scaledMax options for Ain objects
+  * scaled value method for Ain objects
 
 0.10.0 / 2014-10-17
 ===================

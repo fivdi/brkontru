@@ -11,7 +11,7 @@ var bot = require('../'),
 
 analogInputs.forEach(function (ain) {
   ain.once('ready', function () {
-    console.log(ain.name + ' - ' + ain.pin.ain.vsenseName + ' - ' + ain.rawValue());
+    console.log(ain.name + ' - ' + ain.pin.ain.vsenseName + ' - ' + ain.rawValue() + ' - ' + ain.value());
   });
 });
 
