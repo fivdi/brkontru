@@ -43,8 +43,8 @@ button is pressed or released. The options object can be used to configure
 the debounce interval, pull type, and active state for the button.
 
 The following options are supported:
-- debounceInterval: debounce interval in milliseconds (optional, default 50 milliseconds)
-- pullType: pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.PULL_UP)
+- debounceInterval - debounce interval in milliseconds (optional, default 50 milliseconds)
+- pullType - pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.PULL_UP)
 - isActiveLow - true or false (optional, default true)
 
 ### Event: 'ready'

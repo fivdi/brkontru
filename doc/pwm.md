@@ -10,9 +10,9 @@ frequency and duty cycle. Additional options are available for configuring the
 PWM polarity and whether or not the PWM signal is initially enabled.
 
 The following options are supported:
-- period: period in nannoseconds (optional, default 500000 nanoseconds)
-- duty: duty in nanoseconds (optional, default 0 nanoseconds)
-- enabled: true or false (optional, default true)
+- period - period in nannoseconds (optional, default 500000 nanoseconds)
+- duty - duty in nanoseconds (optional, default 0 nanoseconds)
+- enabled - true or false (optional, default true)
 - polarity - Pwm.LOW or Pwm.HIGH (optional, default Pwm.LOW)
 
 ### Method: period(value)

@@ -1,7 +1,7 @@
 ## Gpio Class - General Purpose Input Output
 
-Gpio objects can be used to interact with GPIOs. They support input, output,
-interrupt detection, pull-up resistors, and pull-down resistors.
+Gpio objects can be used to control GPIOs. They support input, output, interrupt
+detection, pull-up resistors, and pull-down resistors.
 
 The following circuit shows how to wire a button to pin 24 and an LED to pin
 26 on the P9 header. When the button is pressed, P9_24 will be pulled low.
@@ -40,7 +40,7 @@ The following options are supported:
 - direction - Gpio.IN, Gpio.OUT, Gpio.OUT_HIGH, or Gpio.OUT_LOW (optional, default Gpio.OUT)
 - edge - Gpio.NONE, Gpio.FALLING, Gpio.RISING, or Gpio.BOTH (optional, default Gpio.NONE)
 - isActiveLow - true or false (optional, default false)
-- pullType: pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.NONE)
+- pullType - pullType.NONE, pullTypes.PULL_UP, or pullTypes.PULL_DOWN (optional, default pullTypes.NONE)
 
 ### Method: direction(value)
 - value - Gpio.IN or Gpio.OUT (optional)
