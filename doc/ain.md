@@ -10,8 +10,8 @@ The value is a scaled value in the range options.scaledMin to
 options.scaledMax.
 
 The following options are supported:
-- scaledMin - number (optional, defaule 0)
-- scaledMax - number (optional, defaule 1)
+- scaledMin - number (optional, default 0)
+- scaledMax - number (optional, default 1)
 - vsenseScale - number (optional, default 100)
 
 ### Method: rawValue()
