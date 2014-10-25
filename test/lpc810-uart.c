@@ -1,38 +1,51 @@
 /*
- * lpc810          | bbb uart1        | bbb uart4
- * ----------------+------------------+-----------------
- * pio_4/pin 2/tx  | p9_26 (uart1_rx) | p9_11 (uart4_rx)
- * pio_5/pin 1/rx  | p9_24 (uart1_tx) | p9_13 (uart4_tx)
+ * Configuration:
+ * - 30MHz clock
+ * - 1 wait state for flash
+ * - PIO0_1 is a LED outupt
+ * - UART0 on PIO0_4 (tx) and PIO0_5 (rx) 115200 baud
+ * - SysTick 10 times a second
  *
+ * Operation:
+ * - Toggle the state of the LED on PIO0_1 on every SysTick (heartbeat)
+ * - Every character received on UART0 is echoed back 11520 times
+ *
+ * lpc810           | bbb uart1        | bbb uart4
+ * -----------------+------------------+-----------------
+ * PIO0_4/pin 2/tx  | p9_26 (uart1_rx) | p9_11 (uart4_rx)
+ * PIO0_5/pin 1/rx  | p9_24 (uart1_tx) | p9_13 (uart4_tx)
  */
 #include "LPC8xx.h"
 
 #include <cr_section_macros.h>
 
 void SysTick_Handler(void) {
-    // Toggle PIO0_1
+    // Toggle LED on PIO0_1
     LPC_GPIO_PORT->NOT0 = 2;
 }
 
 void UART0_IRQHandler(void) {
-    static uint8_t ch = 'A';
-    static uint16_t count = 0;
+    static uint8_t ch = 0;
+    static uint16_t sendCount = 0;
 
     if (LPC_USART0->INTSTAT & 0x01) { // Receiver ready flag.
+        // Save byte received
         ch = LPC_USART0->RXDATA;
 
-        // Enable UART0 TXRDYEN interrupts
+        // Enable UART0 tx interrupts and tell tx interrupt to send 11520 bytes
         LPC_USART0->INTENSET = 0x04;
-        count = 11520;
+        sendCount = 11520;
     }
 
     if (LPC_USART0->INTSTAT & 0x04) { // Transmitter ready flag.
-        if (count) {
-            --count;
+        if (sendCount) {
+            // send byte
+            --sendCount;
             LPC_USART0->TXDATA = ch;
         }
 
-        if (count == 0) {
+        if (sendCount == 0) {
+            // Disable UART0 tx interrupts
             LPC_USART0->INTENCLR = 0x04;
         }
     }
@@ -79,10 +92,11 @@ int main(void) {
     // UART0 enabled, 8 bit, no parity, 1 stop bit, no flow control
     LPC_USART0->CFG = 0x05;
 
-    // Enable UART0 RXRDYEN
+    // Enable UART0 rx interrupt
     LPC_USART0->INTENSET = 0x01;
     NVIC_EnableIRQ(UART0_IRQn);
 
+    // SysTick 10 time a second
     SysTick_Config(30000000/10);
  
     while (1);
