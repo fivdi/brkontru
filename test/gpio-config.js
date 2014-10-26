@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require('assert'),
   bot = require('../'),
   pullTypes = bot.pullTypes,

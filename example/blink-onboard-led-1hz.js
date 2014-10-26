@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   usr0 = new bot.Led(bot.Led.USR0);
 

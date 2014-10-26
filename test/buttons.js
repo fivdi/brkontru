@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   buttons = [
     new bot.Button(bot.pins.p9_23),

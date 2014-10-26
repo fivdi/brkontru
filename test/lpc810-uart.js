@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  * Use BBB UART4 to communicate with UART0 on an NXP LPC810. This program
  * assumes that lpc810-uart.c is running on the LPC810. When lpc810-uart.c

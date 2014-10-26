@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   led1 = new bot.Led(bot.pins.p9_26),
   led2 = new bot.Led(bot.pins.p9_27);

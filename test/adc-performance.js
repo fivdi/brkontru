@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   ain = new bot.Ain(bot.pins.p9_33);
 

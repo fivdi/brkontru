@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   led = new bot.Pwm(bot.pins.p9_42);
 

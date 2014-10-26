@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   pwms = [
     new bot.Pwm(bot.pins.p8_13),

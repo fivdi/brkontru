@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   Gpio = bot.Gpio,
   gpio = new Gpio(bot.pins.p8_07, {

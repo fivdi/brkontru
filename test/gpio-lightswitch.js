@@ -1,3 +1,5 @@
+'use strict';
+
 var bot = require('../'),
   button = new bot.Gpio(bot.pins.p9_23, {
     direction: bot.Gpio.IN,
