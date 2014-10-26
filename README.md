@@ -24,7 +24,7 @@ than the BeagleBone Black itself. The following example will blink onboard user
 LED0 at a frequency of 1Hz.
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   led0 = new bot.Led(bot.Led.USR0);
 
 led0.once('ready', function () {
@@ -38,7 +38,7 @@ blink delays are adjusted. The LEDs will alternate between glowing dimly and
 brightly.
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   Led = bot.Led,
   leds;
 
@@ -71,7 +71,7 @@ Toggle the state of an LED every time a button is pressed.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   button = new bot.Button(bot.pins.p9_24),
   led = new bot.Led(bot.pins.p9_26),
   ledState = 0;
@@ -88,7 +88,7 @@ Fade an LED on and off once per second.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/pwm.png">
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   led = new bot.Pwm(bot.pins.p9_42);
 
 led.once('ready', function () {
@@ -118,7 +118,7 @@ Determine the ambient light level with an analog ambient light sensor.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/adc.png">
 
 ```js
-var bot = require('../'),
+var bot = require('brkontru'),
   ain = new bot.Ain(bot.pins.p9_36);
 
 ain.once('ready', function () {
