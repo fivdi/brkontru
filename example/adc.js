@@ -5,7 +5,7 @@ var bot = require('../'),
 
 ain.once('ready', function () {
   setInterval(function () {
-    console.log(ain.rawValue());
+    console.log('value: ' + ain.value() + ', rawValue: ' + ain.rawValue());
   }, 1000);
 });
 

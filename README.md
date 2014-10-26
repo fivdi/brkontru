@@ -24,12 +24,12 @@ than the BeagleBone Black itself. The following example will blink onboard user
 LED0 at a frequency of 1Hz.
 
 ```js
-var bot = require('brkontru'),
-  usr0 = new bot.Led(bot.Led.USR0);
+var bot = require('../'),
+  led0 = new bot.Led(bot.Led.USR0);
 
-usr0.once('ready', function () {
+led0.once('ready', function () {
   // Blink at 1Hz. Cycle = 1000ms, on for 500ms, off for 500ms.
-  usr0.blink();
+  led0.blink();
 });
 ```
 
@@ -38,11 +38,11 @@ blink delays are adjusted. The LEDs will alternate between glowing dimly and
 brightly.
 
 ```js
-var bot = require('brkontru'),
+var bot = require('../'),
   Led = bot.Led,
   leds;
 
-leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function(usrledName) {
+leds = [Led.USR0, Led.USR1, Led.USR2, Led.USR3].map(function (usrledName) {
   return new Led(usrledName);
 });
 
@@ -71,7 +71,7 @@ Toggle the state of an LED every time a button is pressed.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/button-and-led.png">
 
 ```js
-var bot = require('brkontru'),
+var bot = require('../'),
   button = new bot.Button(bot.pins.p9_24),
   led = new bot.Led(bot.pins.p9_26),
   ledState = 0;
@@ -88,13 +88,13 @@ Fade an LED on and off once per second.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/pwm.png">
 
 ```js
-var bot = require('brkontru'),
+var bot = require('../'),
   led = new bot.Pwm(bot.pins.p9_42);
 
 led.once('ready', function () {
-  var period = led.period();
-  var duty = 0;
-  var delta = period / 50;
+  var period = led.period(),
+    duty = 0,
+    delta = period / 50;
 
   (function updateDuty() {
     led.duty(duty);
@@ -107,7 +107,7 @@ led.once('ready', function () {
     }
 
     setTimeout(updateDuty, 10);
-  })();
+  }());
 });
 ```
 
@@ -118,15 +118,14 @@ Determine the ambient light level with an analog ambient light sensor.
 <img src="https://github.com/fivdi/brkontru/raw/master/example/adc.png">
 
 ```js
-var bot = require('brkontru'),
+var bot = require('../'),
   ain = new bot.Ain(bot.pins.p9_36);
 
 ain.once('ready', function () {
   setInterval(function () {
-    console.log(ain.rawValue());
+    console.log('value: ' + ain.value() + ', rawValue: ' + ain.rawValue());
   }, 1000);
 });
-
 ```
 
 ## Documentation
