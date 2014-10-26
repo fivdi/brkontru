@@ -1,4 +1,4 @@
-0.10.0 / 2014-10-26
+0.11.0 / 2014-10-26
 ===================
 
   * isActiveLow option and method for Gpio objects
