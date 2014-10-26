@@ -3,12 +3,11 @@ var bot = require('../'),
 
 function test() {
   var time = process.hrtime(),
-    value,
     opsPerSec,
     ops;
 
   for (ops = 0; ops !== 3000; ops += 1) {
-    value = ain.rawValue();
+    ain.rawValue();
   }
 
   time = process.hrtime(time);
@@ -18,7 +17,7 @@ function test() {
   console.log('     ' + opsPerSec + ' adc ops per second');
 }
 
-ain.once('ready', function() {
+ain.once('ready', function () {
   test();
 });
 

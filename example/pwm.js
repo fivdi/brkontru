@@ -2,9 +2,9 @@ var bot = require('../'),
   led = new bot.Pwm(bot.pins.p9_42);
 
 led.once('ready', function () {
-  var period = led.period();
-  var duty = 0;
-  var delta = period / 50;
+  var period = led.period(),
+    duty = 0,
+    delta = period / 50;
 
   (function updateDuty() {
     led.duty(duty);
@@ -17,6 +17,6 @@ led.once('ready', function () {
     }
 
     setTimeout(updateDuty, 10);
-  })();
+  }());
 });
 

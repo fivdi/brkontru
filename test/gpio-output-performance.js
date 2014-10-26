@@ -18,7 +18,7 @@ function test() {
   console.log('     ' + opsPerSec + ' output ops per second');
 }
 
-out.once('ready', function() {
+out.once('ready', function () {
   test();
 });
 

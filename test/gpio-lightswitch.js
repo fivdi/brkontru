@@ -6,7 +6,7 @@ var bot = require('../'),
   led = new bot.Gpio(bot.pins.p9_26);
 
 bot.once('ready', [button, led], function () {
-  setInterval(function() {
+  setInterval(function () {
     led.value(button.value());
   }, 20);
 });

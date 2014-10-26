@@ -3,12 +3,11 @@ var bot = require('../'),
 
 function test() {
   var time = process.hrtime(),
-    state = 0,
     opsPerSec,
     ops;
 
   for (ops = 0; ops !== 100000; ops += 1) {
-    state = button.value();
+    button.value();
   }
 
   time = process.hrtime(time);
@@ -18,7 +17,7 @@ function test() {
   console.log('     ' + opsPerSec + ' input ops per second');
 }
 
-button.once('ready', function() {
+button.once('ready', function () {
   test();
 });
 

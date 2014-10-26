@@ -4,7 +4,7 @@ var bot = require('../'),
     edge: Gpio.BOTH
   });
 
-gpio.once('ready', function() {
+gpio.once('ready', function () {
   var time,
     rising = 0,
     falling = 0;

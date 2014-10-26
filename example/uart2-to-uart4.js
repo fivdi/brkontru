@@ -3,7 +3,7 @@ var bot = require('../'),
   Uart = bot.Uart,
   uart2 = new Uart(Uart.UART2, {baudRate: Uart.B3000000}),
   uart4 = new Uart(Uart.UART4, {baudRate: Uart.B3000000}),
-  buf = Array(10000 + 1).join('hello'),
+  buf = new Array(10000 + 1).join('hello'),
   charsReceived = 0;
 
 bot.once('ready', [uart2, uart4], function () {
