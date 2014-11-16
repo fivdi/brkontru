@@ -9,6 +9,10 @@
 
 #include "serialutil.h"
 
+static const char PARITY_NONE[] = "none";
+static const char PARITY_ODD[] = "odd";
+static const char PARITY_EVEN[] = "even";
+
 NAN_METHOD(GetBaudRate) {
   NanScope();
 
@@ -121,7 +125,7 @@ NAN_METHOD(SetCharacterSize) {
     NanThrowError(strerror(errno), errno);
   }
 
-  tio.c_cflag &= ~(CSIZE);
+  tio.c_cflag &= ~CSIZE;
 
   switch (size) {
     case 5:
@@ -136,6 +140,70 @@ NAN_METHOD(SetCharacterSize) {
     case 8:
       tio.c_cflag |= CS8;
       break;
+  }
+
+  if (tcsetattr(fd, TCSANOW, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
+NAN_METHOD(GetParity) {
+  NanScope();
+
+  if (args.Length() < 1 || !args[0]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to getParity(int fd)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  if (tio.c_cflag & PARENB) {
+    if (tio.c_cflag & PARODD) {
+      NanReturnValue(NanNew<v8::String>(PARITY_ODD));
+    }
+    NanReturnValue(NanNew<v8::String>(PARITY_EVEN));
+  }
+
+  NanReturnValue(NanNew<v8::String>(PARITY_NONE));
+}
+
+NAN_METHOD(SetParity) {
+  NanScope();
+
+  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsString()) {
+    return NanThrowError(
+      "incorrect arguments passed to setParity(int fd, char[] type)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+  NanUtf8String type(args[1]);
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  if (strcmp(*type, PARITY_NONE) == 0) {
+    tio.c_cflag &= ~PARENB;
+  } else if (strcmp(*type, PARITY_ODD) == 0) {
+    tio.c_cflag |= PARENB;
+    tio.c_cflag |= PARODD;
+  } else if (strcmp(*type, PARITY_EVEN) == 0) {
+    tio.c_cflag |= PARENB;
+    tio.c_cflag &= ~PARODD;
+  } else {
+    return NanThrowError(
+      "setParity(int fd, char[] type) expects type to be \"none\", \"odd\", or \"even\""
+    );
   }
 
   if (tcsetattr(fd, TCSANOW, &tio)) {
@@ -252,6 +320,10 @@ void Init(v8::Handle<v8::Object> exports) {
   exports->Set(NanNew<v8::String>("B3500000"), NanNew<v8::Number>(B3500000));
   exports->Set(NanNew<v8::String>("B4000000"), NanNew<v8::Number>(B4000000));
 
+  exports->Set(NanNew<v8::String>("PARITY_NONE"), NanNew<v8::String>(PARITY_NONE));
+  exports->Set(NanNew<v8::String>("PARITY_ODD"), NanNew<v8::String>(PARITY_ODD));
+  exports->Set(NanNew<v8::String>("PARITY_EVEN"), NanNew<v8::String>(PARITY_EVEN));
+
   exports->Set(
     NanNew<v8::String>("getBaudRate"),
     NanNew<v8::FunctionTemplate>(GetBaudRate)->GetFunction()
@@ -267,6 +339,14 @@ void Init(v8::Handle<v8::Object> exports) {
   exports->Set(
     NanNew<v8::String>("setCharacterSize"),
     NanNew<v8::FunctionTemplate>(SetCharacterSize)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("getParity"),
+    NanNew<v8::FunctionTemplate>(GetParity)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("setParity"),
+    NanNew<v8::FunctionTemplate>(SetParity)->GetFunction()
   );
   exports->Set(
     NanNew<v8::String>("setRawMode"),

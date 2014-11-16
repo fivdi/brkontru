@@ -4,6 +4,7 @@ unpublished
   * updated dependencies
   * use cfmakeraw to set raw mode for serial ports
   * characterSize option and method for Uart objects
+  * parity option and method for Uart objects
 
 0.11.0 / 2014-10-26
 ===================

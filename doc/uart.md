@@ -11,6 +11,7 @@ used to configure the various aspects of the UART such as its baud rate.
 The following options are supported:
 - baudRate - one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants) (optional, default Uart.B38400)
 - characterSize - 5, 6, 7, or 8 (optional, default 8)
+- parity - one of the [parity constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#parity-constants) (optional, default Uart.PARITY_NONE)
 - highWaterMark - number (optional, default 512)
 - encoding - string (optional, default null)
 
@@ -32,6 +33,12 @@ rate to the specified rate.
 
 Returns the character size if no size is specified, else sets the character
 size to the specified size.
+
+### Method: parity(type)
+- type - one of the [parity constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#parity-constants) (optional)
+
+Returns the parity type of the UART if no type is specified, else sets the
+parity type to the specified type.
 
 ### Method: close()
 Close underlying resources.
@@ -99,4 +106,12 @@ Uart.B2500000 | 2500000 |
 Uart.B3000000 | 3000000 |
 Uart.B3500000 | 3500000 |
 Uart.B4000000 | 4000000 |
+
+### Parity Constants
+
+Constant | Parity |
+:---: | :---: |
+Uart.PARITY_NONE | no parity |
+Uart.PARITY_ODD | odd parity |
+Uart.PARITY_EVEN | even parity |
 
