@@ -1,7 +1,7 @@
 'use strict';
 
 var bot = require('../'),
-  out = new bot.Gpio(bot.pins.p9_26);
+  out = new bot.Gpio(bot.pins.p8_07);
 
 function test() {
   var time = process.hrtime(),
