@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * stopBits option and method for Uart objects
+
 0.12.0 / 2014-11-16
 ===================
 

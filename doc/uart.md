@@ -12,6 +12,7 @@ The following options are supported:
 - baudRate - one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants) (optional, default Uart.B38400)
 - characterSize - 5, 6, 7, or 8 (optional, default 8)
 - parity - one of the [parity constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#parity-constants) (optional, default Uart.PARITY_NONE)
+- stopBits - 1 or 2 (optional, default 1)
 - highWaterMark - number (optional, default 512)
 - encoding - string (optional, default null)
 
@@ -39,6 +40,12 @@ size to the specified size.
 
 Returns the parity type of the UART if no type is specified, else sets the
 parity type to the specified type.
+
+### Method: stopBits(count)
+- count - 1 or 2 (optional)
+
+Returns the number of stop bits if no count is specified, else sets the number
+of stop bits to the specified count.
 
 ### Method: close()
 Close underlying resources.

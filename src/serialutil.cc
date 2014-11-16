@@ -213,6 +213,70 @@ NAN_METHOD(SetParity) {
   NanReturnUndefined();
 }
 
+NAN_METHOD(GetStopBits) {
+  NanScope();
+
+  if (args.Length() < 1 || !args[0]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to setStopBits(int fd)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  int count = 1;
+
+  if (tio.c_cflag & CSTOPB) {
+    count = 2;
+  }
+
+  NanReturnValue(NanNew<v8::Number>(count));
+}
+
+NAN_METHOD(SetStopBits) {
+  NanScope();
+
+  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to setStopBits(int fd, int count)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+  size_t count = args[1]->Int32Value();
+
+  if (count < 1 || count > 2) {
+    return NanThrowError(
+      "setStopBits(int fd, int count) expects count to be 1 or 2"
+    );
+  }
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  switch (count) {
+    case 1:
+      tio.c_cflag &= ~CSTOPB;
+      break;
+    case 2:
+      tio.c_cflag |= CSTOPB;
+      break;
+  }
+
+  if (tcsetattr(fd, TCSANOW, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
 NAN_METHOD(SetRawMode) {
   NanScope();
 
@@ -347,6 +411,14 @@ void Init(v8::Handle<v8::Object> exports) {
   exports->Set(
     NanNew<v8::String>("setParity"),
     NanNew<v8::FunctionTemplate>(SetParity)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("getStopBits"),
+    NanNew<v8::FunctionTemplate>(GetStopBits)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("setStopBits"),
+    NanNew<v8::FunctionTemplate>(SetStopBits)->GetFunction()
   );
   exports->Set(
     NanNew<v8::String>("setRawMode"),
