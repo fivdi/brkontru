@@ -1,3 +1,9 @@
+unpublished
+===========
+
+  * updated dependencies
+  * use cfmakeraw to set raw mode for serial ports
+
 0.11.0 / 2014-10-26
 ===================
 
