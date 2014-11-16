@@ -10,7 +10,7 @@ used to configure the various aspects of the UART such as its baud rate.
 
 The following options are supported:
 - baudRate - one of the [baud rate constants](https://github.com/fivdi/brkontru/blob/master/doc/uart.md#baud-rate-constants) (optional, default Uart.B38400)
-- characterSize - 5, 6, 7, or 8 (default 8)
+- characterSize - 5, 6, 7, or 8 (optional, default 8)
 - highWaterMark - number (optional, default 512)
 - encoding - string (optional, default null)
 
