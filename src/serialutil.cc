@@ -9,55 +9,6 @@
 
 #include "serialutil.h"
 
-NAN_METHOD(FakeInput) {
-  NanScope();
-
-  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsInt32()) {
-    return NanThrowError(
-      "incorrect arguments passed to fakeInput(int fd, int ch)"
-    );
-  }
-
-  int fd = args[0]->Int32Value();
-  char ch = args[1]->Int32Value();
-
-  if (ioctl(fd, TIOCSTI, &ch)) {
-    NanThrowError(strerror(errno), errno);
-  }
-
-  NanReturnUndefined();
-}
-
-NAN_METHOD(SetCanonical) {
-  NanScope();
-
-  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsBoolean()) {
-    return NanThrowError(
-      "incorrect arguments passed to setCanonical(int fd, bool canonical)"
-    );
-  }
-
-  int fd = args[0]->Int32Value();
-  bool canonical = args[1]->IsTrue();
-
-  struct termios tio;
-  if (tcgetattr(fd, &tio)) {
-    NanThrowError(strerror(errno), errno);
-  }
-
-  if (canonical) {
-    tio.c_lflag |= ICANON;
-  } else {
-    tio.c_lflag &= ~(ICANON);
-  }
-
-  if (tcsetattr(fd, TCSANOW, &tio)) {
-    NanThrowError(strerror(errno), errno);
-  }
-
-  NanReturnUndefined();
-}
-
 NAN_METHOD(GetBaudRate) {
   NanScope();
 
@@ -111,6 +62,89 @@ NAN_METHOD(SetBaudRate) {
   NanReturnUndefined();
 }
 
+NAN_METHOD(GetCharacterSize) {
+  NanScope();
+
+  if (args.Length() < 1 || !args[0]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to getCharacterSize(int fd)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  int size = 0;
+
+  switch (tio.c_cflag & CSIZE) {
+    case CS5:
+      size = 5;
+      break;
+    case CS6:
+      size = 6;
+      break;
+    case CS7:
+      size = 7;
+      break;
+    case CS8:
+      size = 8;
+      break;
+  }
+
+  NanReturnValue(NanNew<v8::Number>(size));
+}
+
+NAN_METHOD(SetCharacterSize) {
+  NanScope();
+
+  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to setCharacterSize(int fd, int size)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+  size_t size = args[1]->Int32Value();
+
+  if (size < 5 || size > 8) {
+    return NanThrowError(
+      "setCharacterSize(int fd, int size) expects size to be 5, 6, 7, or 8"
+    );
+  }
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  tio.c_cflag &= ~(CSIZE);
+
+  switch (size) {
+    case 5:
+      tio.c_cflag |= CS5;
+      break;
+    case 6:
+      tio.c_cflag |= CS6;
+      break;
+    case 7:
+      tio.c_cflag |= CS7;
+      break;
+    case 8:
+      tio.c_cflag |= CS8;
+      break;
+  }
+
+  if (tcsetattr(fd, TCSANOW, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
 NAN_METHOD(SetRawMode) {
   NanScope();
 
@@ -130,6 +164,55 @@ NAN_METHOD(SetRawMode) {
   cfmakeraw(&tio);
 
   if (tcsetattr(fd, TCSADRAIN, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
+NAN_METHOD(SetCanonical) {
+  NanScope();
+
+  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsBoolean()) {
+    return NanThrowError(
+      "incorrect arguments passed to setCanonical(int fd, bool canonical)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+  bool canonical = args[1]->IsTrue();
+
+  struct termios tio;
+  if (tcgetattr(fd, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  if (canonical) {
+    tio.c_lflag |= ICANON;
+  } else {
+    tio.c_lflag &= ~(ICANON);
+  }
+
+  if (tcsetattr(fd, TCSANOW, &tio)) {
+    NanThrowError(strerror(errno), errno);
+  }
+
+  NanReturnUndefined();
+}
+
+NAN_METHOD(FakeInput) {
+  NanScope();
+
+  if (args.Length() < 2 || !args[0]->IsInt32() || !args[1]->IsInt32()) {
+    return NanThrowError(
+      "incorrect arguments passed to fakeInput(int fd, int ch)"
+    );
+  }
+
+  int fd = args[0]->Int32Value();
+  char ch = args[1]->Int32Value();
+
+  if (ioctl(fd, TIOCSTI, &ch)) {
     NanThrowError(strerror(errno), errno);
   }
 
@@ -170,14 +253,6 @@ void Init(v8::Handle<v8::Object> exports) {
   exports->Set(NanNew<v8::String>("B4000000"), NanNew<v8::Number>(B4000000));
 
   exports->Set(
-    NanNew<v8::String>("fakeInput"),
-    NanNew<v8::FunctionTemplate>(FakeInput)->GetFunction()
-  );
-  exports->Set(
-    NanNew<v8::String>("setCanonical"),
-    NanNew<v8::FunctionTemplate>(SetCanonical)->GetFunction()
-  );
-  exports->Set(
     NanNew<v8::String>("getBaudRate"),
     NanNew<v8::FunctionTemplate>(GetBaudRate)->GetFunction()
   );
@@ -186,8 +261,24 @@ void Init(v8::Handle<v8::Object> exports) {
     NanNew<v8::FunctionTemplate>(SetBaudRate)->GetFunction()
   );
   exports->Set(
+    NanNew<v8::String>("getCharacterSize"),
+    NanNew<v8::FunctionTemplate>(GetCharacterSize)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("setCharacterSize"),
+    NanNew<v8::FunctionTemplate>(SetCharacterSize)->GetFunction()
+  );
+  exports->Set(
     NanNew<v8::String>("setRawMode"),
     NanNew<v8::FunctionTemplate>(SetRawMode)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("setCanonical"),
+    NanNew<v8::FunctionTemplate>(SetCanonical)->GetFunction()
+  );
+  exports->Set(
+    NanNew<v8::String>("fakeInput"),
+    NanNew<v8::FunctionTemplate>(FakeInput)->GetFunction()
   );
 }
 
