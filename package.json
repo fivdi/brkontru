@@ -1,7 +1,7 @@
 {
   "name": "brkontru",
   "description": "Break on Through - ADC, GPIO, PWM, UARTs, and more on the BeagleBone Black.",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "author": "fivdi",
   "keywords": [
     "beaglebone",

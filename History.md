@@ -1,7 +1,7 @@
-Unpublished
-===========
+0.12.1 / 2015-07-04
+===================
 
-  * stopBits option and method for Uart objects
+  * brkontru has moved to [github.com/fivdi/bot-io](https://github.com/fivdi/bot-io)
 
 0.12.0 / 2014-11-16
 ===================
